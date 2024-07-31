@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable
 interface IFindAddressByZipCodeViaCepClient {
 
     @GetMapping("/{zipCode}/json")
-    fun find(@PathVariable zipCode: String): ViaCepResponse
+    fun find(@PathVariable zipCode: String): ViaCepDTO
 }
 
 @Component("FindAddressByZipCodeViaCepClient")
@@ -27,7 +27,7 @@ class FindAddressByZipCodeViaCepClient(
     }
 }
 
-data class ViaCepResponse(
+data class ViaCepDTO(
     val logradouro: String,
     val localidade: String,
     val uf: String
